@@ -8,6 +8,8 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.ADIS16470_IMU;
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
@@ -20,6 +22,8 @@ public class Drivetrain extends SubsystemBase {
   private final RelativeEncoder frontRightEncoder;
   private final RelativeEncoder backLeftEncoder;
   private final RelativeEncoder backRightEncoder;
+
+  ADIS16470_IMU gyro = new ADIS16470_IMU();
 
   /** Creates a new Drivetrain. */
   public Drivetrain() {
